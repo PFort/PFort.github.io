@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Página Web Básica</title>
+    <title>Página Web Interactiva</title>
     
     <style>
         /* Estilos CSS */
@@ -52,6 +52,19 @@
             color: #666;
         }
 
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -66,7 +79,7 @@
 <body>
 
     <header>
-        <h1>Bienvenido a Mi Página Web</h1>
+        <h1>Bienvenido a Mi Página Web Interactiva</h1>
     </header>
 
     <nav>
@@ -78,12 +91,25 @@
 
     <section>
         <h2>¡Hola Mundo!</h2>
-        <p>Esta es una página web básica creada con HTML y CSS. Puedes modificar este contenido para personalizarla según tus necesidades.</p>
+        <p id="mensaje">Esta es una página web básica creada con HTML, CSS y ahora con un toque de JavaScript.</p>
+        <button onclick="cambiarMensaje()">Haz clic aquí</button>
     </section>
 
     <footer>
         <p>Copyright &copy; 2024 Mi Página Web</p>
     </footer>
+
+    <script>
+        // Función para cambiar el contenido del párrafo
+        function cambiarMensaje() {
+            var mensaje = document.getElementById("mensaje");
+            if (mensaje.innerHTML === "Esta es una página web básica creada con HTML, CSS y ahora con un toque de JavaScript.") {
+                mensaje.innerHTML = "¡Has cambiado el contenido con JavaScript! 🎉";
+            } else {
+                mensaje.innerHTML = "Esta es una página web básica creada con HTML, CSS y ahora con un toque de JavaScript.";
+            }
+        }
+    </script>
 
 </body>
 </html>
